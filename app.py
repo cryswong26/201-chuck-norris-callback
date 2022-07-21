@@ -9,7 +9,7 @@ import os
 list_of_choices=[' ', 'Squat', 'Chest Press', 'Pull Up']
 githublink = 'https://github.com/cryswong26/201-chuck-norris-callback'
 #image1='Orion Gym.jpg'
-list_of_pics = ['Orion Gym.jpg', 'Squat.mp4', 'Chest Press.mp4', 'Pull Up.mp4']
+list_of_pics=['Orion Gym.jpg', 'Squat.mp4', 'Chest Press.mp4', 'Pull Up.mp4']
 heading1='My Favorite Exercises'
 
 ########### Initiate the app
@@ -21,6 +21,7 @@ app.title='Exercises'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
+    html.Br(),
     #html.Img(src=app.get_asset_url(image1), style={'width': 'auto', 'height': '10%'}),
     #dcc.Dropdown(id='your-input-here',
                 #options=[{'label': i, 'value': i} for i in list_of_choices],
@@ -47,7 +48,7 @@ app.layout = html.Div([
 @app.callback(dash.dependencies.Output('your-output-here', 'children'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def image(whatever_you_chose):
-    image = html.img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
+    image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
     return image
 
 #def display_value(whatever_you_chose):
