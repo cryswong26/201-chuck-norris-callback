@@ -55,7 +55,7 @@ app.layout = html.Div([
              )
 def multi_output(whatever_you_chose):
     image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
-    message = f'Here is a {whatever_you_chose}!"
+    message = f'Here is a {whatever_you_chose}!'
     return image, message
 
 #def display_value(whatever_you_chose):
