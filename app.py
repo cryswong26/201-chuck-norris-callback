@@ -39,7 +39,7 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    #html.Div(id='message-1'),
+    html.Div(id='message', src=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
