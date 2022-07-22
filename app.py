@@ -9,7 +9,7 @@ import os
 list_of_choices=[' ', 'Squat', 'Chest Press', 'Pull Up']
 githublink = 'https://github.com/cryswong26/201-chuck-norris-callback'
 #image1='Orion Gym.jpg'
-list_of_pics=['Orion Gym.jpg', 'Squat 2.gif', 'Chest Press 2.gif', 'Pull Up 2.gif']
+list_of_pics=['Orion Gym.jpg', 'Squat.gif', 'Chest Press.gif', 'Pull Up.gif']
 heading1='My Favorite Exercises'
 
 ########### Initiate the app
@@ -56,7 +56,9 @@ def multi_output(whatever_you_chose):
     if whatever_you_chose is None:
         raise PreventUpdate
     image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
-    message = f'Here is a {whatever_you_chose}!'
+    split_list = whatever_you_chose.split('.',1)
+    message = 'Here is a '+split_list[0]+'!'
+    #message = f'Here is a {whatever_you_chose}!'
     return image, message
 
 #def display_value(whatever_you_chose):
