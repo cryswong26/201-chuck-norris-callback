@@ -39,7 +39,8 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Div(id='message-1'),
+    #html.Div(id='message-1'),
+    html.Iframe(src='', style={'width': '300', 'height':'200'}, id='message'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
@@ -49,12 +50,12 @@ app.layout = html.Div([
 ######### Interactive callbacks go here #########
 @app.callback(
     [Output('your-output-here', 'children'),
-    Output('message-1', 'message')],
+    Output('message', 'src')],
     [Input('your-input-here', 'value')],
              )
 def multi_output(whatever_you_chose):
     image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
-    message = f"Here is a {whatever_you_chose}!"
+    message = f'Here is a {whatever_you_chose}!"
     return image, message
 
 #def display_value(whatever_you_chose):
