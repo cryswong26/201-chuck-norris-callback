@@ -40,7 +40,6 @@ app.layout = html.Div([
     html.Div(id='your-output-here', children=''),
     html.Br(),
     #html.Div(id='message-1'),
-    html.Iframe(src='', style={'width': '300', 'height':'200'}, id='message'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
