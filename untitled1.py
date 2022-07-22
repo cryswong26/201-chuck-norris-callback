@@ -39,23 +39,17 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Div(id='message-1'),
-    html.Br(),
     html.A('Code on Github', href=githublink),
 
 ])
 
 
 ######### Interactive callbacks go here #########
-@app.callback(
-    [Output('your-output-here', 'children'),
-    Output('message-1', 'message')],
-    [Input('your-input-here', 'value')],
-             )
-def multi_output(whatever_you_chose):
+@app.callback(dash.dependencies.Output('your-output-here', 'children'),
+              [dash.dependencies.Input('your-input-here', 'value')])
+def image(whatever_you_chose):
     image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
-    message = f"Here is a {whatever_you_chose}!"
-    return image, message
+    return image
 
 #def display_value(whatever_you_chose):
 #    return f'I will now show you a {whatever_you_chose}.'
