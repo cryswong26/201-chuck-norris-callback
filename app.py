@@ -9,7 +9,7 @@ import os
 list_of_choices=[' ', 'Squat', 'Chest Press', 'Pull Up']
 githublink = 'https://github.com/cryswong26/201-chuck-norris-callback'
 #image1='Orion Gym.jpg'
-list_of_pics=['Orion Gym.jpg', 'Squat.gif', 'Chest Press.gif', 'Pull Up.gif']
+list_of_pics=['Gym.jpg', 'Squat.gif', 'Chest Press.gif', 'Pull Up.gif']
 heading1='My Favorite Exercises'
 
 ########### Initiate the app
