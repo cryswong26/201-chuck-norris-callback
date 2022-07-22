@@ -39,7 +39,7 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Div(id='message'),
+    html.Div(id='output-message', children=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
@@ -49,12 +49,15 @@ app.layout = html.Div([
 ######### Interactive callbacks go here #########
 @app.callback(
     [Output('your-output-here', 'children'),
-    Output('message', 'src')],
+    Output('output-message', 'children')],
     [Input('your-input-here', 'value')],
              )
 def multi_output(whatever_you_chose):
+    if whatever_you_chose is None:
+        raise PreventUpdate
     image = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
-    return f'Here is a {whatever_you_chose}!', image
+    message = f'Here is a {whatever_you_chose}!'
+    return image, message
 
 #def display_value(whatever_you_chose):
 #    return f'I will now show you a {whatever_you_chose}.'
